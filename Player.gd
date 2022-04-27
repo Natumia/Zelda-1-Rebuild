@@ -3,22 +3,25 @@ extends KinematicBody2D
 var speed = 90
 var velocity = Vector2.ZERO
 
-enum state {
-	IDLE
+enum {
+	IDLE,
+	MOVE,
 	ATTACK
 }
 
-var currentState = state.IDLE
+var state = IDLE
 
 func _ready():
 	pass 
 
 func _physics_process(_delta):
 	
-	match currentState:
-		state.IDLE:
+	match state:
+		IDLE:
 			get_input()
-		state.ATTACK:
+		MOVE:
+			get_input()
+		ATTACK:
 			pass
 	
 	velocity= move_and_slide(velocity)
@@ -45,19 +48,24 @@ func get_input():
 		
 		# Creates a wait timer. This is TEMP.
 		var t = Timer.new()
-		t.set_wait_time(0.3)
+		t.set_wait_time(0.2)
 		t.set_one_shot(true)
 		self.add_child(t)
 		t.start()
 		
 		velocity = Vector2.ZERO
-		currentState = state.ATTACK
-		print("swing!")
+		state = ATTACK
+		print("Attack!")
 		
 		# Waits for timer to stop. This is TEMP.
 		yield(t, "timeout")
 		t.queue_free()
 		
-		currentState = state.IDLE
+		state = IDLE
+	
+	if velocity != Vector2.ZERO:
+		state = MOVE
+	else:
+		state = IDLE
 	
 	velocity = velocity.normalized() * speed
