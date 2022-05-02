@@ -8,6 +8,7 @@ onready var animationPlayer = $AnimationPlayer
 # allow the attack command to make the sword visible.
 onready var sword = $Sword
 onready var swordSprite = $Sword/Sprite
+onready var swordAnimation = $Sword/AnimationPlayer
 
 var speed = 80
 var velocity = Vector2.ZERO
@@ -27,68 +28,59 @@ func _physics_process(_delta):
 	
 	match state:
 		IDLE:
-			animationPlayer.stop(false)
 			get_input()
 		MOVE:
-			animationPlayer.play()
 			get_input()
 		ATTACK:
-			pass
+			attack()
 	
 	velocity= move_and_slide(velocity)
 
 func get_input():
 	velocity = Vector2.ZERO
 	
-	# Basic 4-way movement to replicate Zelda 1. This also rotates the sword
-	# sprite and sets the player animation to match direction.
+#	 Basic 4-way movement to replicate Zelda 1. This also rotates the sword
+#	 sprite and sets the player animation to match direction.
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
-		sword.rotation_degrees = 180
 		animationPlayer.current_animation = "MoveUp"
 	elif Input.is_action_pressed("ui_down"):
 		velocity.y += 1
-		sword.rotation_degrees = 0
 		animationPlayer.current_animation = "MoveDown"
 	else:
 		if Input.is_action_pressed("ui_left"):
 			velocity.x -= 1
-			sword.rotation_degrees = 90
 			animationPlayer.current_animation = "MoveLeft"
 		elif Input.is_action_pressed("ui_right"):
 			velocity.x += 1
-			sword.rotation_degrees = 270
 			animationPlayer.current_animation = "MoveRight"
-	
-	# The start of swinging the sword. It will stop the player from moving, 
-	# by chaning the start to swing. Then after animation ends go back to
-	# a movement state.
-	if Input.is_action_just_pressed("ui_select"):
-		
-		swordSprite.visible = true
-		
-		# Creates a wait timer. This is TEMP.
-		var t = Timer.new()
-		t.set_wait_time(0.2)
-		t.set_one_shot(true)
-		self.add_child(t)
-		t.start()
-		
-		velocity = Vector2.ZERO
-		state = ATTACK
-		print("Attack!")
-		
-		# Waits for timer to stop. This is TEMP.
-		yield(t, "timeout")
-		t.queue_free()
-		
-		swordSprite.visible = false
-		
-		state = IDLE
 	
 	if velocity != Vector2.ZERO:
 		state = MOVE
+		animationPlayer.play()
 	else:
 		state = IDLE
+		animationPlayer.stop(false)
+	
+	if Input.is_action_just_pressed("ui_select"):
+		velocity = Vector2.ZERO
+		state = ATTACK
 	
 	velocity = velocity.normalized() * speed
+
+# Attack function that's called in the attack state. It checks last used
+# animation and plays the proper attack animation. Will bundle the process
+# of showing the sword and activating the damage collision later.
+func attack():
+	if animationPlayer.assigned_animation == "MoveDown":
+		animationPlayer.play("AttackDown")
+		swordAnimation.play("SwordDown")
+	elif animationPlayer.assigned_animation == "MoveUp":
+		animationPlayer.play("AttackUp")
+		swordAnimation.play("SwordUp")
+	elif animationPlayer.assigned_animation == "MoveLeft":
+		animationPlayer.play("AttackLeft")
+		swordAnimation.play("SwordLeft")
+	elif animationPlayer.assigned_animation == "MoveRight":
+		animationPlayer.play("AttackRight")
+		swordAnimation.play("SwordRight")
