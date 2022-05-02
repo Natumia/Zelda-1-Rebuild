@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Test Player.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
 
 [node name="Test World" type="Node2D"]
 
@@ -15,3 +16,22 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Player"]
 texture = ExtResource( 1 )
 hframes = 2
+
+[node name="Sword" type="Position2D" parent="Player"]
+
+[node name="Sprite" type="Sprite" parent="Player/Sword"]
+visible = false
+position = Vector2( 0, 18 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 256.0
+margin_bottom = 41.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_top = 199.0
+margin_right = 256.0
+margin_bottom = 240.0
+color = Color( 0, 0, 0, 1 )

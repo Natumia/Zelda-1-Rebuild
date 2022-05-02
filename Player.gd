@@ -1,5 +1,11 @@
 extends KinematicBody2D
 
+
+# These are the variables used to rotate the sword with player movement, and 
+# allow the attack command to make the sword visible.
+onready var sword = $Sword
+onready var swordSprite = $Sword/Sprite
+
 var speed = 90
 var velocity = Vector2.ZERO
 
@@ -31,20 +37,28 @@ func get_input():
 	
 	# Basic 4-way movement to replicate Zelda 1. I need to find a way to make it
 	# that if the opposite directions are pressed it stops movement.
-	if Input.is_action_pressed("ui_left"):
-		velocity.x -= 1
-	elif Input.is_action_pressed("ui_right"):
+	# I think I better mimiced how Z1 handles directions. I need to work on
+	# animations so I can better get a feeling of what I'm making.
+	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
+		sword.rotation_degrees = 270
+	elif Input.is_action_pressed("ui_down"):
+		velocity.y += 1
+		sword.rotation_degrees = 0
 	else:
-		if Input.is_action_pressed("ui_up"):
+		if Input.is_action_pressed("ui_left"):
+			velocity.x -= 1
+			sword.rotation_degrees = 90
+		elif Input.is_action_pressed("ui_up"):
 			velocity.y -= 1
-		elif Input.is_action_pressed("ui_down"):
-			velocity.y += 1
+			sword.rotation_degrees = 180
 	
 	# The start of swinging the sword. It will stop the player from moving, 
 	# by chaning the start to swing. Then after animation ends go back to
 	# a movement state.
 	if Input.is_action_just_pressed("ui_select"):
+		
+		swordSprite.visible = true
 		
 		# Creates a wait timer. This is TEMP.
 		var t = Timer.new()
@@ -60,6 +74,8 @@ func get_input():
 		# Waits for timer to stop. This is TEMP.
 		yield(t, "timeout")
 		t.queue_free()
+		
+		swordSprite.visible = false
 		
 		state = IDLE
 	
