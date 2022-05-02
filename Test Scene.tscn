@@ -7,7 +7,7 @@
 [node name="Test World" type="Node2D"]
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 134, 122 )
+position = Vector2( 128, 128 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -25,13 +25,7 @@ position = Vector2( 0, 18 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 3 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="PlaceholderUI" type="ColorRect" parent="."]
 margin_right = 256.0
-margin_bottom = 41.0
-color = Color( 0, 0, 0, 1 )
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-margin_top = 199.0
-margin_right = 256.0
-margin_bottom = 240.0
+margin_bottom = 56.0
 color = Color( 0, 0, 0, 1 )

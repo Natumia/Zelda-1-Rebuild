@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-
 # These are the variables used to rotate the sword with player movement, and 
 # allow the attack command to make the sword visible.
 onready var sword = $Sword
@@ -39,9 +38,9 @@ func get_input():
 	# that if the opposite directions are pressed it stops movement.
 	# I think I better mimiced how Z1 handles directions. I need to work on
 	# animations so I can better get a feeling of what I'm making.
-	if Input.is_action_pressed("ui_right"):
-		velocity.x += 1
-		sword.rotation_degrees = 270
+	if Input.is_action_pressed("ui_up"):
+		velocity.y -= 1
+		sword.rotation_degrees = 180
 	elif Input.is_action_pressed("ui_down"):
 		velocity.y += 1
 		sword.rotation_degrees = 0
@@ -49,9 +48,9 @@ func get_input():
 		if Input.is_action_pressed("ui_left"):
 			velocity.x -= 1
 			sword.rotation_degrees = 90
-		elif Input.is_action_pressed("ui_up"):
-			velocity.y -= 1
-			sword.rotation_degrees = 180
+		elif Input.is_action_pressed("ui_right"):
+			velocity.x += 1
+			sword.rotation_degrees = 270
 	
 	# The start of swinging the sword. It will stop the player from moving, 
 	# by chaning the start to swing. Then after animation ends go back to
