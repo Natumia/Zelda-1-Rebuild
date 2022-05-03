@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Z1LinkGreen.png-3099d2f36f85b9d630c772a9fe268cb6.stex"
+path="res://.import/Z1Dungeon.png-74f809776d0a4cebc7a20bea47285d1c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Z1LinkGreen.png"
-dest_files=[ "res://.import/Z1LinkGreen.png-3099d2f36f85b9d630c772a9fe268cb6.stex" ]
+source_file="res://TileMaps/Z1Dungeon.png"
+dest_files=[ "res://.import/Z1Dungeon.png-74f809776d0a4cebc7a20bea47285d1c.stex" ]
 
 [params]
 

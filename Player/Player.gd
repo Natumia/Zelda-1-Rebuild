@@ -4,12 +4,6 @@ extends KinematicBody2D
 # this into a tree and blend between the animations. Maybe not for this project.
 onready var animationPlayer = $AnimationPlayer
 
-# These are the variables used to rotate the sword with player movement, and 
-# allow the attack command to make the sword visible.
-onready var sword = $Sword
-onready var swordSprite = $Sword/Sprite
-onready var swordAnimation = $Sword/AnimationPlayer
-
 var speed = 80
 var velocity = Vector2.ZERO
 
@@ -69,18 +63,13 @@ func get_input():
 	velocity = velocity.normalized() * speed
 
 # Attack function that's called in the attack state. It checks last used
-# animation and plays the proper attack animation. Will bundle the process
-# of showing the sword and activating the damage collision later.
+# animation and plays the proper attack animation. 
 func attack():
 	if animationPlayer.assigned_animation == "MoveDown":
 		animationPlayer.play("AttackDown")
-		swordAnimation.play("SwordDown")
 	elif animationPlayer.assigned_animation == "MoveUp":
 		animationPlayer.play("AttackUp")
-		swordAnimation.play("SwordUp")
 	elif animationPlayer.assigned_animation == "MoveLeft":
 		animationPlayer.play("AttackLeft")
-		swordAnimation.play("SwordLeft")
 	elif animationPlayer.assigned_animation == "MoveRight":
 		animationPlayer.play("AttackRight")
-		swordAnimation.play("SwordRight")

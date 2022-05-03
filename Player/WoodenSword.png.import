@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/WoodenSword.png-50d67282a3fe7b8dc88f993dd40f79a6.stex"
+path="res://.import/WoodenSword.png-863c79eed35b04a3fec2533b9a7cd8db.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://WoodenSword.png"
-dest_files=[ "res://.import/WoodenSword.png-50d67282a3fe7b8dc88f993dd40f79a6.stex" ]
+source_file="res://Player/WoodenSword.png"
+dest_files=[ "res://.import/WoodenSword.png-863c79eed35b04a3fec2533b9a7cd8db.stex" ]
 
 [params]
 

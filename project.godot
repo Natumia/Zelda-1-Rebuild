@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Zelda 1 Rebuild"
-run/main_scene="res://Test Scene.tscn"
+run/main_scene="res://TestOverworld.tscn"
 config/icon="res://icon.png"
 
 [display]
