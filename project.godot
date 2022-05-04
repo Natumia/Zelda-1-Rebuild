@@ -14,6 +14,10 @@ config/name="Zelda 1 Rebuild"
 run/main_scene="res://TestOverworld.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerStatistics="*res://Player/PlayerStatistics.gd"
+
 [display]
 
 window/size/width=256

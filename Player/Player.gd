@@ -8,12 +8,11 @@ var speed = 80
 var velocity = Vector2.ZERO
 
 enum {
-	IDLE,
 	MOVE,
 	ATTACK
 }
 
-var state = IDLE
+var state = MOVE
 
 func _ready():
 	pass
@@ -21,8 +20,6 @@ func _ready():
 func _physics_process(_delta):
 	
 	match state:
-		IDLE:
-			get_input()
 		MOVE:
 			get_input()
 		ATTACK:
@@ -50,15 +47,14 @@ func get_input():
 			animationPlayer.current_animation = "MoveRight"
 	
 	if velocity != Vector2.ZERO:
-		state = MOVE
 		animationPlayer.play()
 	else:
-		state = IDLE
 		animationPlayer.stop(false)
 	
 	if Input.is_action_just_pressed("ui_select"):
-		velocity = Vector2.ZERO
-		state = ATTACK
+		if PlayerStatistics.playerSword != 0:
+			velocity = Vector2.ZERO
+			state = ATTACK
 	
 	velocity = velocity.normalized() * speed
 
@@ -68,7 +64,7 @@ func attack():
 	if animationPlayer.assigned_animation == "MoveDown":
 		animationPlayer.play("AttackDown")
 	elif animationPlayer.assigned_animation == "MoveUp":
-		animationPlayer.play("AttackUp")
+		animationPlayer.play("AttackUp") 
 	elif animationPlayer.assigned_animation == "MoveLeft":
 		animationPlayer.play("AttackLeft")
 	elif animationPlayer.assigned_animation == "MoveRight":
