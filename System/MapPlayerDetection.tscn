@@ -4,6 +4,7 @@
 extents = Vector2( 120, 80 )
 
 [node name="MapPlayerDetection" type="Area2D"]
+visible = false
 collision_layer = 0
 collision_mask = 2
 
