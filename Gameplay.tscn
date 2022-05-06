@@ -34,11 +34,9 @@ position = Vector2( 128, 144 )
 position = Vector2( 0, 56 )
 offset = Vector2( 128, 56 )
 current = true
-smoothing_enabled = true
 smoothing_speed = 4.0
 
-[node name="Timer" type="Timer" parent="Camera2D"]
-one_shot = true
+[node name="Tween" type="Tween" parent="Camera2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -47,4 +45,4 @@ margin_right = 256.0
 margin_bottom = 56.0
 color = Color( 0, 0, 0, 1 )
 
-[connection signal="timeout" from="Camera2D/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="tween_completed" from="Camera2D/Tween" to="." method="_on_Tween_tween_completed"]
