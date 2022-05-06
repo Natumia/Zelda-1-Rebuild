@@ -1,8 +1,10 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Z1LinkGreen.png" type="Texture" id=2]
 [ext_resource path="res://Player/WoodenSword.png" type="Texture" id=3]
+[ext_resource path="res://System/HurtBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://System/HitBox.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=6]
 resource_name = "AttackDown"
@@ -368,6 +370,54 @@ tracks/2/keys = {
 "update": 0,
 "values": [ 180.0 ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("HitBox/CollisionShape2D:shape:extents")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.5, 8.5 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("HitBox/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 12.5 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("HitBox/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HitBox/CollisionShape2D:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90.0 ]
+}
 
 [sub_resource type="Animation" id=11]
 resource_name = "SwordDown"
@@ -408,6 +458,54 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 180.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("HitBox/CollisionShape2D:shape:extents")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.5, 8.5 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("HitBox/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 12.5 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("HitBox/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.02, 0.23 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HitBox/CollisionShape2D:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -450,6 +548,54 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( -3, 1 ), Vector2( -11, 1 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("HitBox/CollisionShape2D:shape:extents")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.5, 6.5 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("HitBox/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -13.5, 1.5 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("HitBox/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.02, 0.23 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HitBox/CollisionShape2D:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90.0 ]
+}
 
 [sub_resource type="Animation" id=13]
 resource_name = "SwordRight"
@@ -490,6 +636,54 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 3, 2 ), Vector2( 11, 2 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("HitBox/CollisionShape2D:shape:extents")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.5, 6.5 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("HitBox/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 13.5, 1.5 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("HitBox/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.02, 0.23 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HitBox/CollisionShape2D:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90.0 ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -532,14 +726,61 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( -1, -5 ), Vector2( -1, -12 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("HitBox/CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1.5, -14 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("HitBox/CollisionShape2D:shape:extents")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.5, 7 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("HitBox/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.02, 0.23 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HitBox/CollisionShape2D:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [sub_resource type="CapsuleShape2D" id=25]
 radius = 4.0
-height = 7.0
+height = 6.0
 
 [node name="Player" type="KinematicBody2D"]
-collision_layer = 3
-collision_mask = 0
+collision_layer = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -579,7 +820,22 @@ anims/SwordLeft = SubResource( 12 )
 anims/SwordRight = SubResource( 13 )
 anims/SwordUp = SubResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="HitBox" parent="Sword" instance=ExtResource( 5 )]
+collision_layer = 8
+collision_mask = 0
+damage = 1
+
+[node name="CollisionShape2D" parent="Sword/HitBox" index="0"]
+position = Vector2( 0.5, 12.5 )
+rotation = 1.5708
+
+[node name="TerrainCollision" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 4 )
 rotation = 1.5708
 shape = SubResource( 25 )
+
+[node name="HurtBox" parent="." instance=ExtResource( 4 )]
+collision_mask = 20
+
+[editable path="Sword/HitBox"]
+[editable path="HurtBox"]
