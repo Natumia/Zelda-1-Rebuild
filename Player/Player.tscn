@@ -17,10 +17,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 8, 0 ]
+"values": [ 8, 0, 1 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:state")
@@ -822,7 +822,7 @@ anims/SwordUp = SubResource( 14 )
 
 [node name="HitBox" parent="Sword" instance=ExtResource( 5 )]
 collision_layer = 8
-collision_mask = 0
+collision_mask = 4
 damage = 1
 
 [node name="CollisionShape2D" parent="Sword/HitBox" index="0"]
@@ -836,6 +836,12 @@ shape = SubResource( 25 )
 
 [node name="HurtBox" parent="." instance=ExtResource( 4 )]
 collision_mask = 20
+
+[node name="MapDetection" parent="." instance=ExtResource( 4 )]
+collision_layer = 0
+collision_mask = 32
+
+[connection signal="area_entered" from="MapDetection" to="." method="_on_MapDetection_area_entered"]
 
 [editable path="Sword/HitBox"]
 [editable path="HurtBox"]
