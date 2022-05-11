@@ -1,15 +1,15 @@
-extends Node2D
+extends Camera2D
 
 func _ready():
-	var player = get_node_or_null("Player")
+	var player = get_node("../Player")
 	if player != null:
 		player.connect("update_camera", self, "_on_Player_update_camera") 
 
 func _on_Player_update_camera(mapPosition, mapName):
-	if $Camera2D.position != mapPosition:
+	if self.position != mapPosition:
 		print(mapName)
-		var tween = $Camera2D/Tween
-		tween.interpolate_property($Camera2D, "position", $Camera2D.position, mapPosition, 1.7, Tween.TRANS_LINEAR)
+		var tween = $Tween
+		tween.interpolate_property(self, "position", self.position, mapPosition, 1.7, Tween.TRANS_LINEAR)
 		tween.start()
 		get_tree().paused = true
 

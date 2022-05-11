@@ -9,7 +9,7 @@
 [sub_resource type="Animation" id=6]
 resource_name = "AttackDown"
 length = 0.25
-step = 0.05
+step = 0.025
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -17,7 +17,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.25 ),
+"times": PoolRealArray( 0, 0.225, 0.25 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 8, 0, 1 ]
@@ -60,7 +60,7 @@ tracks/3/keys = {
 [sub_resource type="Animation" id=7]
 resource_name = "AttackLeft"
 length = 0.25
-step = 0.05
+step = 0.025
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -68,10 +68,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.225, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 9, 2 ]
+"values": [ 9, 3, 2 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:state")
@@ -111,7 +111,7 @@ tracks/3/keys = {
 [sub_resource type="Animation" id=8]
 resource_name = "AttackRight"
 length = 0.25
-step = 0.05
+step = 0.025
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -119,10 +119,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.225, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 10, 4 ]
+"values": [ 10, 5, 4 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:state")
@@ -162,7 +162,7 @@ tracks/3/keys = {
 [sub_resource type="Animation" id=9]
 resource_name = "AttackUp"
 length = 0.25
-step = 0.05
+step = 0.025
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -170,10 +170,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.225, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 11, 6 ]
+"values": [ 11, 6, 7 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:state")
