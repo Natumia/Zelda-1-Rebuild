@@ -72,11 +72,15 @@ func attack():
 	elif animationPlayer.assigned_animation == "MoveRight":
 		animationPlayer.play("AttackRight")
 
-func _on_HurtBox_area_entered(area): 
-	if area.collision_layer == 6:
-		print(area.get_parent())
-
 func _on_MapDetection_area_entered(area):
 	var mapName = area.get_parent().name
 	var mapPosition = area.get_parent().position
-	emit_signal("update_camera", mapPosition, mapName)
+	var mapDestination = null
+	
+	if area.get_parent().get("mapDestination") != null:
+		mapDestination = area.get_parent().mapDestination
+	else: 
+		mapDestination = null
+	
+	emit_signal("update_camera", mapPosition, mapName, mapDestination)
+

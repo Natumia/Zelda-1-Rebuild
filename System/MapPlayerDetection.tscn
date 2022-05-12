@@ -1,13 +1,7 @@
-[gd_scene load_steps=2 format=2]
-
-[sub_resource type="RectangleShape2D" id=31]
-extents = Vector2( 120, 80 )
+[gd_scene format=2]
 
 [node name="MapPlayerDetection" type="Area2D"]
-visible = false
 collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 128, 88 )
-shape = SubResource( 31 )
