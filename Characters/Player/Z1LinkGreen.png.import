@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Z1LinkGreen.png-f13f61bc5496ca11199baedd5ae1098c.stex"
+path="res://.import/Z1LinkGreen.png-299be91768f19e5edd017f3c96288118.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Z1LinkGreen.png"
-dest_files=[ "res://.import/Z1LinkGreen.png-f13f61bc5496ca11199baedd5ae1098c.stex" ]
+source_file="res://Characters/Player/Z1LinkGreen.png"
+dest_files=[ "res://.import/Z1LinkGreen.png-299be91768f19e5edd017f3c96288118.stex" ]
 
 [params]
 

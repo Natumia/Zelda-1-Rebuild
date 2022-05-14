@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Maps/Overworld/Overworld.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://System/Camera2D.gd" type="Script" id=7]
 
 [node name="Gameplay" type="Node2D"]

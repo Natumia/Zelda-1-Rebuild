@@ -4,7 +4,15 @@ var playerHealth = 3.0
 
 var playerRupees = 0
 
-var playerSword = 1
+enum swords {
+	NO_SWORD
+	WOODEN_SWORD
+	WHITE_SWORD
+	MAGICAL_SWORD
+}
+
+var playerSword = swords.WOODEN_SWORD
+
 var playerHasMagicShield = false
 
 func _ready():

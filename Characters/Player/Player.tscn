@@ -1,8 +1,8 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=39 format=2]
 
-[ext_resource path="res://Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Player/Z1LinkGreen.png" type="Texture" id=2]
-[ext_resource path="res://Player/WoodenSword.png" type="Texture" id=3]
+[ext_resource path="res://Characters/Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Characters/Player/Z1LinkGreen.png" type="Texture" id=2]
+[ext_resource path="res://Characters/Player/WoodenSword.png" type="Texture" id=3]
 [ext_resource path="res://System/HurtBox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://System/HitBox.tscn" type="PackedScene" id=5]
 
@@ -22,20 +22,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 8, 0, 1 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:state")
+tracks/1/type = "animation"
+tracks/1/path = NodePath("Sword/AnimationPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.25 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
+"clips": PoolStringArray( "SwordDown" ),
+"times": PoolRealArray( 0 )
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimationPlayer:current_animation")
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -43,18 +41,10 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0.25 ),
 "transitions": PoolRealArray( 1 ),
-"update": 2,
-"values": [ "MoveDown" ]
-}
-tracks/3/type = "animation"
-tracks/3/path = NodePath("Sword/AnimationPlayer")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"clips": PoolStringArray( "SwordDown" ),
-"times": PoolRealArray( 0 )
+"values": [ {
+"args": [  ],
+"method": "attack_end"
+} ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -73,20 +63,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 9, 3, 2 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:state")
+tracks/1/type = "animation"
+tracks/1/path = NodePath("Sword/AnimationPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.25 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
+"clips": PoolStringArray( "SwordLeft" ),
+"times": PoolRealArray( 0 )
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimationPlayer:current_animation")
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -94,18 +82,10 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0.25 ),
 "transitions": PoolRealArray( 1 ),
-"update": 2,
-"values": [ "MoveLeft" ]
-}
-tracks/3/type = "animation"
-tracks/3/path = NodePath("Sword/AnimationPlayer")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"clips": PoolStringArray( "SwordLeft" ),
-"times": PoolRealArray( 0 )
+"values": [ {
+"args": [  ],
+"method": "attack_end"
+} ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -124,20 +104,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 10, 5, 4 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:state")
+tracks/1/type = "animation"
+tracks/1/path = NodePath("Sword/AnimationPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.25 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
+"clips": PoolStringArray( "SwordRight" ),
+"times": PoolRealArray( 0 )
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimationPlayer:current_animation")
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -145,18 +123,10 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0.25 ),
 "transitions": PoolRealArray( 1 ),
-"update": 2,
-"values": [ "MoveRight" ]
-}
-tracks/3/type = "animation"
-tracks/3/path = NodePath("Sword/AnimationPlayer")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"clips": PoolStringArray( "SwordRight" ),
-"times": PoolRealArray( 0 )
+"values": [ {
+"args": [  ],
+"method": "attack_end"
+} ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -175,20 +145,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 11, 6, 7 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:state")
+tracks/1/type = "animation"
+tracks/1/path = NodePath("Sword/AnimationPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.25 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
+"clips": PoolStringArray( "SwordUp" ),
+"times": PoolRealArray( 0 )
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimationPlayer:current_animation")
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -196,21 +164,13 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0.25 ),
 "transitions": PoolRealArray( 1 ),
-"update": 2,
-"values": [ "MoveUp" ]
-}
-tracks/3/type = "animation"
-tracks/3/path = NodePath("Sword/AnimationPlayer")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"clips": PoolStringArray( "SwordUp" ),
-"times": PoolRealArray( 0 )
+"values": [ {
+"args": [  ],
+"method": "attack_end"
+} ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=29]
 resource_name = "MoveDown"
 length = 0.2
 loop = true
@@ -224,7 +184,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 0, 1 ]
+"values": [ 1, 0 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -241,7 +201,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 2, 3 ]
+"values": [ 3, 2 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -258,7 +218,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 4, 5 ]
+"values": [ 5, 4 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -275,7 +235,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 6, 7 ]
+"values": [ 7, 6 ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -292,6 +252,66 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0 ]
 }
+
+[sub_resource type="AnimationNodeAnimation" id=40]
+animation = "AttackDown"
+
+[sub_resource type="AnimationNodeAnimation" id=41]
+animation = "AttackUp"
+
+[sub_resource type="AnimationNodeAnimation" id=42]
+animation = "AttackRight"
+
+[sub_resource type="AnimationNodeAnimation" id=43]
+animation = "AttackLeft"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=33]
+blend_point_0/node = SubResource( 40 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 41 )
+blend_point_1/pos = Vector2( 0, -1 )
+blend_point_2/node = SubResource( 42 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 43 )
+blend_point_3/pos = Vector2( -1, 0 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=36]
+animation = "MoveDown"
+
+[sub_resource type="AnimationNodeAnimation" id=37]
+animation = "MoveUp"
+
+[sub_resource type="AnimationNodeAnimation" id=38]
+animation = "MoveRight"
+
+[sub_resource type="AnimationNodeAnimation" id=39]
+animation = "MoveLeft"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=32]
+blend_point_0/node = SubResource( 36 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 37 )
+blend_point_1/pos = Vector2( 0, -1 )
+blend_point_2/node = SubResource( 38 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 39 )
+blend_point_3/pos = Vector2( -1, 0 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+
+[sub_resource type="AnimationNodeStateMachine" id=30]
+states/Attack/node = SubResource( 33 )
+states/Attack/position = Vector2( 869, 98 )
+states/Move/node = SubResource( 32 )
+states/Move/position = Vector2( 541, 98 )
+transitions = [ "Move", "Attack", SubResource( 34 ), "Attack", "Move", SubResource( 35 ) ]
+start_node = "Move"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=31]
 
 [sub_resource type="Animation" id=15]
 resource_name = "NoSwing"
@@ -814,16 +834,22 @@ vframes = 2
 region_rect = Rect2( 0, 0, 16, 16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "MoveUp"
 anims/AttackDown = SubResource( 6 )
 anims/AttackLeft = SubResource( 7 )
 anims/AttackRight = SubResource( 8 )
 anims/AttackUp = SubResource( 9 )
-anims/MoveDown = SubResource( 1 )
+anims/MoveDown = SubResource( 29 )
 anims/MoveLeft = SubResource( 3 )
 anims/MoveRight = SubResource( 4 )
 anims/MoveUp = SubResource( 5 )
 anims/RESET = SubResource( 2 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 30 )
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 31 )
+parameters/Attack/blend_position = Vector2( 0, 0 )
+parameters/Move/blend_position = Vector2( 0, 0 )
 
 [node name="Sword" type="Position2D" parent="."]
 show_behind_parent = true
@@ -842,6 +868,7 @@ anims/SwordRight = SubResource( 13 )
 anims/SwordUp = SubResource( 14 )
 
 [node name="HitBox" parent="Sword" instance=ExtResource( 5 )]
+visible = false
 collision_layer = 8
 collision_mask = 4
 damage = 1
@@ -857,12 +884,14 @@ rotation = 1.5708
 shape = SubResource( 25 )
 
 [node name="HurtBox" parent="." instance=ExtResource( 4 )]
+visible = false
 collision_mask = 20
 
 [node name="CollisionShape2D" parent="HurtBox" index="0"]
 shape = SubResource( 27 )
 
 [node name="MapDetection" parent="." instance=ExtResource( 4 )]
+visible = false
 collision_layer = 0
 collision_mask = 32
 
