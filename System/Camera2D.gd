@@ -1,7 +1,5 @@
 extends Camera2D
 
-signal new_map
-
 func _ready():
 	var player = get_node("../Player")
 	if player != null:
