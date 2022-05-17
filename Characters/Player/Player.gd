@@ -64,10 +64,11 @@ func attack_end():
 	animState.travel("Move")
 	state = MOVE
 
-func _on_MapDetection_area_entered(area):
+func _on_MapDetectBox_area_entered(area):
 	var mapName = area.get_parent().name
 	var mapPosition = area.get_parent().position
 	var mapDestination = null
+	print("Location: ", mapName, " ", mapPosition, " ", mapDestination)
 	
 	if area.get_parent().get("mapDestination") != null:
 		mapDestination = area.get_parent().mapDestination
@@ -75,4 +76,3 @@ func _on_MapDetection_area_entered(area):
 		mapDestination = null
 	
 	emit_signal("update_camera", mapPosition, mapName, mapDestination)
-

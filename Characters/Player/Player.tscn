@@ -1,10 +1,11 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Characters/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Characters/Player/Z1LinkGreen.png" type="Texture" id=2]
 [ext_resource path="res://Characters/Player/WoodenSword.png" type="Texture" id=3]
 [ext_resource path="res://System/HurtBox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://System/HitBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://System/DetectBox.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=6]
 resource_name = "AttackDown"
@@ -817,8 +818,8 @@ height = 6.0
 [sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 7, 7 )
 
-[sub_resource type="RectangleShape2D" id=28]
-extents = Vector2( 8, 8 )
+[sub_resource type="RectangleShape2D" id=44]
+extents = Vector2( 7, 7 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
@@ -885,21 +886,21 @@ shape = SubResource( 25 )
 
 [node name="HurtBox" parent="." instance=ExtResource( 4 )]
 visible = false
-collision_mask = 20
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" parent="HurtBox" index="0"]
 shape = SubResource( 27 )
 
-[node name="MapDetection" parent="." instance=ExtResource( 4 )]
+[node name="MapDetectBox" parent="." instance=ExtResource( 6 )]
 visible = false
 collision_layer = 0
-collision_mask = 32
 
-[node name="CollisionShape2D" parent="MapDetection" index="0"]
-shape = SubResource( 28 )
+[node name="CollisionShape2D" parent="MapDetectBox" index="0"]
+shape = SubResource( 44 )
 
-[connection signal="area_entered" from="MapDetection" to="." method="_on_MapDetection_area_entered"]
+[connection signal="area_entered" from="MapDetectBox" to="." method="_on_MapDetectBox_area_entered"]
 
 [editable path="Sword/HitBox"]
 [editable path="HurtBox"]
-[editable path="MapDetection"]
+[editable path="MapDetectBox"]

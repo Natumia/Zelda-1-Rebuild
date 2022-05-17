@@ -8,7 +8,6 @@ func _ready():
 func _on_Player_update_camera(mapPosition, mapName, mapDestination):
 	if mapName != "MapEntrance":
 		if self.position != mapPosition:
-			print("Going to " + mapName)
 			var tween = $Tween
 			tween.interpolate_property(self, "position", self.position, mapPosition, 1.7, Tween.TRANS_LINEAR)
 			tween.start()

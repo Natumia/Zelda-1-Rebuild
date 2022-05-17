@@ -11,7 +11,7 @@ pause_mode = 2
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 pause_mode = 1
-position = Vector2( 128, 144 )
+position = Vector2( 128, 152 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, 56 )
@@ -24,9 +24,13 @@ script = ExtResource( 7 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PlaceholderUI" type="ColorRect" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayer"]
 margin_right = 256.0
 margin_bottom = 56.0
-color = Color( 0, 0, 0, 1 )
+
+[node name="PlaceholderUI" type="ColorRect" parent="CanvasLayer/Control"]
+margin_right = 256.0
+margin_bottom = 56.0
+color = Color( 0.0627451, 0.0627451, 0.0627451, 1 )
 
 [connection signal="tween_completed" from="Camera2D/Tween" to="Camera2D" method="_on_Tween_tween_completed"]
