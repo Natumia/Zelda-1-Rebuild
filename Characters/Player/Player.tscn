@@ -822,6 +822,7 @@ extents = Vector2( 7, 7 )
 extents = Vector2( 7, 7 )
 
 [node name="Player" type="KinematicBody2D"]
+pause_mode = 1
 collision_layer = 2
 script = ExtResource( 1 )
 __meta__ = {

@@ -64,15 +64,15 @@ func attack_end():
 	animState.travel("Move")
 	state = MOVE
 
+
+"""
+Will need to make it so it checks if it is a new map cluster, or the same map.
+If the same map just tell gamplay to tween the camera. But if new map cluster
+do the other cool shit.
+"""
 func _on_MapDetectBox_area_entered(area):
 	var mapName = area.get_parent().name
 	var mapPosition = area.get_parent().position
-	var mapDestination = null
-	print("Location: ", mapName, " ", mapPosition, " ", mapDestination)
+	print("Location: ", mapName, " ", mapPosition)
 	
-	if area.get_parent().get("mapDestination") != null:
-		mapDestination = area.get_parent().mapDestination
-	else: 
-		mapDestination = null
-	
-	emit_signal("update_camera", mapPosition, mapName, mapDestination)
+	emit_signal("update_camera", mapPosition)
