@@ -48,8 +48,7 @@ func get_input():
 	# placing the sword on the Player itself. The only issue with that will
 	# be saving in the future... But It's a learning process.
 	if Input.is_action_just_pressed("ui_select"):
-		if PlayerStatistics.playerSword != PlayerStatistics.swords.NO_SWORD:
-			state = ATTACK
+		state = ATTACK
 
 # Attack function that ZEROs movement then sets animation tree to play, and
 # run the Attack state.

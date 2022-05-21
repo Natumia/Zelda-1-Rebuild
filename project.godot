@@ -14,10 +14,6 @@ config/name="Zelda 1 Rebuild"
 run/main_scene="res://Gameplay.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-PlayerStatistics="*res://System/PlayerStatistics.gd"
-
 [display]
 
 window/size/width=256

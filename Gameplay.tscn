@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Maps/Overworld/Overworld.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Gameplay.gd" type="Script" id=2]
 [ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://System/Camera2D.gd" type="Script" id=7]
+[ext_resource path="res://System/GameUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://System/Camera2D.tscn" type="PackedScene" id=5]
 
 [node name="Gameplay" type="Node2D"]
 pause_mode = 2
@@ -14,24 +15,6 @@ script = ExtResource( 2 )
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 127, 144 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, 56 )
-offset = Vector2( 128, 56 )
-current = true
-smoothing_speed = 4.0
-script = ExtResource( 7 )
+[node name="Camera2D" parent="." instance=ExtResource( 5 )]
 
-[node name="Tween" type="Tween" parent="Camera2D"]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-margin_right = 256.0
-margin_bottom = 56.0
-
-[node name="PlaceholderUI" type="ColorRect" parent="CanvasLayer/Control"]
-margin_right = 256.0
-margin_bottom = 56.0
-color = Color( 0.0627451, 0.0627451, 0.0627451, 1 )
-
-[connection signal="tween_completed" from="Camera2D/Tween" to="Camera2D" method="_on_Tween_tween_completed"]
+[node name="GameUI" parent="." instance=ExtResource( 4 )]

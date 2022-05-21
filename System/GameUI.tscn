@@ -1,0 +1,12 @@
+[gd_scene format=2]
+
+[node name="GameUI" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+margin_right = 256.0
+margin_bottom = 56.0
+
+[node name="PlaceholderUI" type="ColorRect" parent="Control"]
+margin_right = 256.0
+margin_bottom = 56.0
+color = Color( 0.0627451, 0.0627451, 0.0627451, 1 )
